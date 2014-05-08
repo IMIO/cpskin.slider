@@ -4,10 +4,9 @@
     xmlns:i18n="http://namespaces.zope.org/i18n"
     xmlns:browser="http://namespaces.zope.org/browser"
     xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
-    i18n_domain="cpskin.slider">
+    i18n_domain="cpskin">
 
   <five:registerPackage package="." initialize=".initialize" />
-  <i18n:registerTranslations directory="locales" />
 
   <include package=".browser"/>
   <include package=".portlets"/>
