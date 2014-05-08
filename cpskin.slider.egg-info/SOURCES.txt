@@ -1,0 +1,17 @@
+README.txt
+setup.cfg
+setup.py
+cpskin/__init__.py
+cpskin.slider.egg-info/PKG-INFO
+cpskin.slider.egg-info/SOURCES.txt
+cpskin.slider.egg-info/dependency_links.txt
+cpskin.slider.egg-info/entry_points.txt
+cpskin.slider.egg-info/namespace_packages.txt
+cpskin.slider.egg-info/not-zip-safe
+cpskin.slider.egg-info/requires.txt
+cpskin.slider.egg-info/top_level.txt
+cpskin/slider/__init__.py
+cpskin/slider/tests.py
+cpskin/slider/browser/__init__.py
+cpskin/slider/portlets/__init__.py
+cpskin/slider/portlets/slider_collection.py

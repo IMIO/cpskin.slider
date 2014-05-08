@@ -1,0 +1,28 @@
+<configure
+    xmlns="http://namespaces.zope.org/zope"
+    xmlns:five="http://namespaces.zope.org/five"
+    xmlns:i18n="http://namespaces.zope.org/i18n"
+    xmlns:browser="http://namespaces.zope.org/browser"
+    xmlns:genericsetup="http://namespaces.zope.org/genericsetup"
+    i18n_domain="cpskin.slider">
+
+  <five:registerPackage package="." initialize=".initialize" />
+  <i18n:registerTranslations directory="locales" />
+
+  <include package=".browser"/>
+  <include package=".portlets"/>
+
+  <genericsetup:registerProfile
+      name="default"
+      title="cpskin.slider"
+      directory="profiles/default"
+      description="Installs the cpskin.slider package"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+  <browser:resourceDirectory
+      name="jquery.flexslider"
+      directory="resources" />
+
+
+</configure>
