@@ -25,6 +25,8 @@ setup(name='cpskin.slider',
       zip_safe=False,
       install_requires=[
           'setuptools',
+          'Plone',
+          'cpskin.locales'
           # -*- Extra requirements: -*-
       ],
       entry_points="""
