@@ -11,6 +11,6 @@ Tests
 
 This package is tested using Travis CI. The current status is :
 
-.. image:: https://travis-ci.org/redturtle/cpskin.slider.png
-    :target: http://travis-ci.org/redturtle/cpskin.slider
+.. image:: https://travis-ci.org/IMIO/cpskin.slider.png
+    :target: http://travis-ci.org/IMIO/cpskin.slider
 
