@@ -6,14 +6,13 @@ version = '1.0'
 setup(name='cpskin.slider',
       version=version,
       description="A collection view based on flexslider",
-      long_description=open("README.rst").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
+      long_description=open("README.rst").read() + "\n" + open(os.path.join("docs", "HISTORY.txt")).read(),
       # Get more strings from
       # http://pypi.python.org/pypi?:action=list_classifiers
       classifiers=[
-        "Framework :: Plone",
-        "Programming Language :: Python",
-        ],
+          "Framework :: Plone",
+          "Programming Language :: Python",
+      ],
       keywords='',
       author='',
       author_email='',
@@ -29,6 +28,13 @@ setup(name='cpskin.slider',
           'cpskin.locales'
           # -*- Extra requirements: -*-
       ],
+      extras_require={
+          'test': [
+              'plone.api',
+              'plone.app.robotframework',
+              'plone.app.testing',
+          ]
+      },
       entry_points="""
       # -*- Entry points: -*-
 
