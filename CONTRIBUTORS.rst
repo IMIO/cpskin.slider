@@ -1,0 +1,2 @@
+- http://www.redturtle.it/, Original Author [Red Turtle]
+- http://www.affinitic.be/, Author [Affinitic]
