@@ -4,7 +4,7 @@
        id="++resource++jquery.flexslider/css/flexslider.css"
        applyPrefix="True"/>
   <stylesheet
-       id="++resource++jquery.flexslider/css/fixslider.css"
+       id="++resource++jquery.flexslider/css/sliderfix.css"
        applyPrefix="True"/>
 
 </object>
