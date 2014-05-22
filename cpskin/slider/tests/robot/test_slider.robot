@@ -28,6 +28,13 @@ Test Slider and Carousel
     Click Element  css=div#carousel ul.slides li:nth-child(2)
     Page Should Contain Element  css=div#slider ul.slides li:nth-child(2).flex-active-slide
 
+Test Url Carousel
+    Logged as owner
+    Page Should Contain Link  SliderCollection
+    Click link  SliderCollection
+    Click link  Festival de danse folklorique
+    Location Should Be  http://localhost:55001/plone/festival-de-danse-folklorique
+
 *** Keywords ***
 
 Logged as owner
