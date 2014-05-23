@@ -16,21 +16,6 @@ import cpskin.slider
 
 class CPSkinSliderPloneWithPackageLayer(PloneWithPackageLayer):
     """
-    plone (portal root)
-    |
-    |-- Commune
-    |   `-- Services communaux
-    |       `-- Finances
-    |
-    `-- Loisirs
-        |-- Tourisme
-        |   `-- Promenades
-        |
-        `-- Art & Culture
-            |-- Bibliothèques
-            `-- Artistes
-                |-- Tata
-                `-- Yoyo
     """
 
     def setUpPloneSite(self, portal):
@@ -38,10 +23,25 @@ class CPSkinSliderPloneWithPackageLayer(PloneWithPackageLayer):
         setRoles(portal, TEST_USER_ID, ['Manager'])
         login(portal, TEST_USER_NAME)
         api.content.create(
-            type='Folder',
-            title='ENSEIGNEMENT',
-            id='enseignement',
+            type='News Item',
+            title='Foire aux boudins',
+            description='Superbe foire',
             container=portal)
+        api.content.create(
+            type='News Item',
+            title='Festival de danse folklorique',
+            description='Parfois synonyme de danse folklorique ou de danse traditionnelle...',
+            container=portal)
+        collection = api.content.create(
+            type='Collection',
+            title='SliderCollection',
+            container=portal)
+        collection.setLayout('slider_view')
+        query = [{'i': 'Type',
+                  'o': 'plone.app.querystring.operation.string.is',
+                  'v': 'News Item',
+                  }]
+        collection.setQuery(query)
 
 
 CPSKIN_SLIDER_FIXTURE = CPSkinSliderPloneWithPackageLayer(

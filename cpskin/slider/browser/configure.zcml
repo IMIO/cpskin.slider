@@ -13,23 +13,9 @@
     template="collection_slider_view.pt"
     permission="zope2.View"
     />
-  <browser:page
-    for="Products.ATContentTypes.interfaces.topic.IATTopic"
-    name="slider_view"
-    template="old_collection_slider_view.pt"
-    permission="zope2.View"
-    />
 
   <browser:menuItem
     for="plone.app.collection.interfaces.ICollection"
-    menu="plone_displayviews"
-    i18n:attributes="title"
-    title="Slider view"
-    action="@@slider_view"
-    description=""
-    />
-  <browser:menuItem
-    for="Products.ATContentTypes.interfaces.topic.IATTopic"
     menu="plone_displayviews"
     i18n:attributes="title"
     title="Slider view"

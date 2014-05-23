@@ -38,6 +38,7 @@ setup(name='cpskin.slider',
       install_requires=[
           'setuptools',
           'Plone',
+          'plone.api',
           'cpskin.locales'
           # -*- Extra requirements: -*-
       ],

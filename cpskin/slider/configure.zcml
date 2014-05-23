@@ -20,6 +20,14 @@
       provides="Products.GenericSetup.interfaces.EXTENSION"
       />
 
+  <genericsetup:registerProfile
+      name="uninstall"
+      title="cpskin.slider: uninstall"
+      directory="profiles/uninstall"
+      description="Uninstalls the cpskin.slider package"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
   <browser:resourceDirectory
       name="jquery.flexslider"
       directory="resources" />
