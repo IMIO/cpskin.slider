@@ -1,38 +1,52 @@
-from setuptools import setup, find_packages
-import os
+# -*- coding: utf-8 -*-
 
-version = '1.0'
+version = 0.1
+
+from setuptools import setup, find_packages
+
+long_description = (
+    open('README.rst').read()
+    + '\n' +
+    'Contributors\n'
+    '============\n'
+    + '\n' +
+    open('CONTRIBUTORS.rst').read()
+    + '\n' +
+    open('CHANGES.rst').read()
+    + '\n')
 
 setup(name='cpskin.slider',
       version=version,
-      description="A collection view based on flexslider",
-      long_description=open("README.rst").read() + "\n" +
-                       open(os.path.join("docs", "HISTORY.txt")).read(),
-      # Get more strings from
-      # http://pypi.python.org/pypi?:action=list_classifiers
+      description='Slider package for cpskin',
+      long_description=long_description,
       classifiers=[
-        "Framework :: Plone",
-        "Programming Language :: Python",
-        ],
+          "Environment :: Web Environment",
+          "Programming Language :: Python",
+          "Programming Language :: Python :: 2.7",
+          "Framework :: Plone",
+          "Framework :: Plone :: 4.2",
+          "Framework :: Plone :: 4.3",
+      ],
       keywords='',
-      author='',
-      author_email='',
-      url='http://svn.plone.org/svn/collective/',
-      license='GPL',
-      packages=find_packages(exclude=['ez_setup']),
-      namespace_packages=['cpskin'],
+      author='IMIO',
+      author_email='support@imio.be',
+      url='https://github.com/imio/',
+      license='gpl',
+      packages=find_packages(),
       include_package_data=True,
       zip_safe=False,
       install_requires=[
           'setuptools',
           'Plone',
+          'plone.api',
           'cpskin.locales'
           # -*- Extra requirements: -*-
       ],
-      entry_points="""
-      # -*- Entry points: -*-
-
-      [z3c.autoinclude.plugin]
-      target = plone
-      """,
-      )
+      extras_require={
+          'test': [
+              'plone.api',
+              'plone.app.robotframework',
+              'plone.app.testing',
+          ]
+      },
+      entry_points={},)

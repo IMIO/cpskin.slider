@@ -2,9 +2,9 @@
 <object name="portal_css">
   <stylesheet
        id="++resource++jquery.flexslider/css/flexslider.css"
-       applyPrefix="True"/>
+       remove="True"/>
   <stylesheet
        id="++resource++jquery.flexslider/css/sliderfix.css"
-       applyPrefix="True"/>
+       remove="True"/>
 
 </object>
