@@ -25,12 +25,20 @@ class CPSkinSliderPloneWithPackageLayer(PloneWithPackageLayer):
         api.content.create(
             type='News Item',
             title='Foire aux boudins',
+            id='1-foire-aux-boudins',
             description='Superbe foire',
             container=portal)
         api.content.create(
             type='News Item',
             title='Festival de danse folklorique',
+            id='2-festival-de-danse-folklorique',
             description='Parfois synonyme de danse folklorique ou de danse traditionnelle...',
+            container=portal)
+        api.content.create(
+            type='Event',
+            title='Evénement important',
+            id='3-evenement-important',
+            description='Un événement important va se produire...',
             container=portal)
         collection = api.content.create(
             type='Collection',
@@ -39,9 +47,10 @@ class CPSkinSliderPloneWithPackageLayer(PloneWithPackageLayer):
         collection.setLayout('slider_view')
         query = [{'i': 'Type',
                   'o': 'plone.app.querystring.operation.string.is',
-                  'v': 'News Item',
+                  'v': ['News Item', 'Event'],
                   }]
         collection.setQuery(query)
+        collection.setSort_on('getId')
 
 
 CPSKIN_SLIDER_FIXTURE = CPSkinSliderPloneWithPackageLayer(
