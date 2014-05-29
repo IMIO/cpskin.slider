@@ -8,6 +8,7 @@
 
 <body>
     <metal:content-core fill-slot="content-core">
+      <metal:block define-macro="content-core">
         <metal:block use-macro="context/standard_view/macros/content-core">
             <metal:entries fill-slot="entries">
             <div id="slider" class="flexslider">
@@ -29,15 +30,24 @@
                                            item_sametime python: item_start == item_end;
                                            item_samedate python: (item_end - item_start &lt; 1) if item_type == 'Event' else False">
 
-                                  <li tal:define="obj item/getObject">
+                                  <li tal:define="obj item/getObject;
+                                                  item_has_leadimage python: getattr(item, 'hasContentLeadImage', False);
+                                                  item_has_thumb exists:obj/image_thumb;">
                                       <a href="#"
                                          class="linkimg"
-                                         tal:condition="obj/image|nothing"
+                                         tal:condition="python: item_has_leadimage or item_has_thumb"
                                          tal:attributes="href item/getURL">
-                                         <img src="" alt=""
-                                              tal:define="scales obj/@@images;
-                                                          scale python:scales.scale('image', 'thumb')"
-                                              tal:replace="structure python:scale and scale.tag(css_class='flexsliderimg') or None" />
+                                         <tal:if tal:condition="item_has_thumb">
+                                             <img src="" alt=""
+                                                  tal:define="scales obj/@@images;
+                                                              scale python:scales.scale('image', 'preview')"
+                                                  tal:replace="structure python:scale and scale.tag(css_class='flexsliderimg') or None" />
+                                         </tal:if>
+                                         <tal:if tal:condition="item_has_leadimage">
+                                             <img src="" alt=""
+                                                  tal:define="leadview nocall:context/aq_parent/@@folder_leadimage_view"
+                                                  tal:attributes="src python: item.getURL() + '/leadImage_preview'" />
+                                         </tal:if>
                                       </a>
                                       <div class="flex-caption">
                                           <h2>
@@ -76,15 +86,24 @@
                                            item_sametime python: item_start == item_end;
                                            item_samedate python: (item_end - item_start &lt; 1) if item_type == 'Event' else False">
 
-                                  <li tal:define="obj item/getObject">
+                                  <li tal:define="obj item/getObject;
+                                                  item_has_leadimage python: getattr(item, 'hasContentLeadImage', False);
+                                                  item_has_thumb exists:obj/image_thumb;">
                                       <a href="#"
                                          class="linkimg"
-                                         tal:condition="obj/image|nothing"
+                                         tal:condition="python: item_has_leadimage or item_has_thumb"
                                          tal:attributes="href item/getURL">
-                                         <img src="" alt=""
-                                              tal:define="scales obj/@@images;
-                                                          scale python:scales.scale('image', 'thumb')"
-                                              tal:replace="structure python:scale and scale.tag(css_class='flexsliderimg') or None" />
+                                         <tal:if tal:condition="item_has_thumb">
+                                             <img src="" alt=""
+                                                  tal:define="scales obj/@@images;
+                                                              scale python:scales.scale('image', 'thumb')"
+                                                  tal:replace="structure python:scale and scale.tag(css_class='flexsliderimg') or None" />
+                                         </tal:if>
+                                         <tal:if tal:condition="item_has_leadimage">
+                                             <img src="" alt=""
+                                                  tal:define="leadview nocall:context/aq_parent/@@folder_leadimage_view"
+                                                  tal:replace="structure python:leadview.tag(obj, css_class='flexsliderimg') or None" />
+                                         </tal:if>
                                       </a>
                                       <div class="flex-caption">
                                           <h2>
@@ -120,6 +139,7 @@
             </script>
             </metal:entries>
         </metal:block>
+      </metal:block>
     </metal:content-core>
 </body>
 </html>
