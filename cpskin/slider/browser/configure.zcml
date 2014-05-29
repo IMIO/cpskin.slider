@@ -12,15 +12,17 @@
     name="slider_view"
     template="collection_slider_view.pt"
     permission="zope2.View"
+    layer="..interfaces.ICPSkinSliderLayer"
     />
 
   <browser:menuItem
     for="plone.app.collection.interfaces.ICollection"
     menu="plone_displayviews"
-    i18n:attributes="title"
     title="Slider view"
     action="@@slider_view"
     description=""
+    i18n:attributes="title"
+    layer="..interfaces.ICPSkinSliderLayer"
     />
 
 
