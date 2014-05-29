@@ -2,11 +2,11 @@
 <object name="portal_javascripts" meta_type="JavaScripts Registry">
 
  <javascript cacheable="True" compression="none"
-     cookable="True" enabled="0" expression=""
+     cookable="True" enabled="1" expression=""
      id="++resource++jquery.flexslider/javascript/jquery.flexslider-min.js" />
 
  <javascript cacheable="True" compression="safe"
-     cookable="True" enabled="1" expression=""
+     cookable="True" enabled="0" expression=""
      id="++resource++jquery.flexslider/javascript/jquery.flexslider.js" />
 
 </object>
