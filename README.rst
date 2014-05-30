@@ -3,7 +3,16 @@
 Introduction
 ============
 
-Slider package for cpskin
+`FlexSlider <http://www.woothemes.com/flexslider/>`_ integration into Plone.
+
+This package adds a "Slider view" on Collections that displays the collection
+results in a slider.
+
+There is also a Slider portlet that can be added to your site.
+
+Note that the slider is displaying the Plone image field of News items but
+does also work with `collective.contentleadimage <https://github.com/collective/collective.contentleadimage>`_
+for all other content types without additional configuration.
 
 
 Tests
