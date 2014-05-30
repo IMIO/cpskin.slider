@@ -54,13 +54,10 @@
 #content a.flex-prev {
   height: 30px !important;
 }
+
 @media screen and (max-width: 860px) {
-  .flex-direction-nav .flex-prev {
-    display: none;
-  }
-  .flex-direction-nav .flex-next {
-    display: none;
-  }
+  .flex-direction-nav .flex-prev { opacity: 1; left: 0;}
+  .flex-direction-nav .flex-next { opacity: 1; right: 0;}
 }
 .portletSliderCollection div.portletHeader {
   padding: 0.42em 1em;
