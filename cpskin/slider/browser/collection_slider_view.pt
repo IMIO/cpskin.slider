@@ -40,13 +40,13 @@
                                          <tal:if tal:condition="item_has_thumb">
                                              <img src="" alt=""
                                                   tal:define="scales obj/@@images;
-                                                              scale python:scales.scale('image', 'preview')"
+                                                              scale python:scales.scale('image', 'large')"
                                                   tal:replace="structure python:scale and scale.tag(css_class='flexsliderimg') or None" />
                                          </tal:if>
                                          <tal:if tal:condition="item_has_leadimage">
                                              <img src="" alt=""
                                                   tal:define="leadview nocall:context/aq_parent/@@folder_leadimage_view"
-                                                  tal:attributes="src python: item.getURL() + '/leadImage_preview'" />
+                                                  tal:attributes="src python: item.getURL() + '/leadImage_large'" />
                                          </tal:if>
                                       </a>
                                       <div class="flex-caption">
