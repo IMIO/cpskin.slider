@@ -4,5 +4,5 @@ exclude *.cfg
 exclude .travis.yml
 exclude bootstrap.py
 graft cpskin 
-recursive-include docs LICENSE.*
+recursive-include docs *
 global-exclude *.pyc
