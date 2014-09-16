@@ -12,6 +12,10 @@
             charset="utf-8"
             src=""
             tal:attributes="src string:${context/@@plone_portal_state/portal_url}/++resource++jquery.flexslider/javascript/jquery.flexslider-min.js"></script>
+    <script type="text/javascript"
+            charset="utf-8"
+            src=""
+            tal:attributes="src string:${context/@@plone_portal_state/portal_url}/++resource++jquery.flexslider/javascript/cpskin.slider.js"></script>
 
 </metal:javascript_head_slot>
 
@@ -129,8 +133,14 @@
             <script type="text/javascript">
                 (function($) {
                      "use strict";
+                     var animation = "slide";
+                     // IE 9 does not support 'slide' animation
+                     if (navigator.sayswho === 'MSIE 9' || navigator.sayswho === 'IE 9')
+                     {
+                        animation = "fade";
+                     }
                      $('#carousel').flexslider({
-                       animation: "slide",
+                       animation: animation,
                        controlNav: false,
                        animationLoop: false,
                        slideshow: false,
@@ -139,7 +149,7 @@
                        asNavFor: '#slider'
                      });
                      $('#slider').flexslider({
-                       animation: "slide",
+                       animation: animation,
                        controlNav: false,
                        animationLoop: false,
                        slideshow: false,
