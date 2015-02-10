@@ -130,32 +130,9 @@
                     </tal:entry>
             </ul>
             </div>
-            <script type="text/javascript">
-                (function($) {
-                     "use strict";
-                     var animation = "slide";
-                     // IE 9 does not support 'slide' animation
-                     if (navigator.sayswho === 'MSIE 9' || navigator.sayswho === 'IE 9')
-                     {
-                        animation = "fade";
-                     }
-                     $('#carousel').flexslider({
-                       animation: animation,
-                       controlNav: false,
-                       animationLoop: false,
-                       slideshow: false,
-                       itemWidth: 210,
-                       itemMargin: 5,
-                       asNavFor: '#slider'
-                     });
-                     $('#slider').flexslider({
-                       animation: animation,
-                       controlNav: false,
-                       animationLoop: false,
-                       slideshow: false,
-                       sync: "#carousel"
-                     });
-                 })(jQuery);
+
+            <!-- slider_config coming from cpskin.core -->
+            <script type="text/javascript" tal:content="slider_config">
             </script>
             </metal:entries>
         </metal:block>
