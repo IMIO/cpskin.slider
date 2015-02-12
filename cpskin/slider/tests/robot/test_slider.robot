@@ -2,6 +2,8 @@
 
 Resource  plone/app/robotframework/keywords.robot
 
+Library  Remote  ${PLONE_URL}/RobotRemote
+
 Test Setup  Run keywords  Open test browser
 Test Teardown  Close all browsers
 
@@ -12,7 +14,7 @@ Test Teardown  Close all browsers
 *** Test cases ***
 
 Test News Item exists
-    Logged as owner
+    Enable autologin as  Site Administrator
     Page Should Contain Link  SliderCollection
     Click link  SliderCollection
     Element Should Contain  css=div#slider ul.slides li.flex-active-slide div h2 a  Foire aux boudins
@@ -20,7 +22,7 @@ Test News Item exists
     Element Text Should Be  css=div#slider ul.slides li.flex-active-slide div h2 a  Festival de danse folklorique
 
 Test Slider and Carousel
-    Logged as owner
+    Enable autologin as  Site Administrator
     Page Should Contain Link  SliderCollection
     Click link  SliderCollection
     Page Should Not Contain Element  css=div#slider ul.slides li:nth-child(3).flex-active-slide
@@ -28,14 +30,14 @@ Test Slider and Carousel
     Page Should Contain Element  css=div#slider ul.slides li:nth-child(3).flex-active-slide
 
 Test Url Carousel
-    Logged as owner
+    Enable autologin as  Site Administrator
     Page Should Contain Link  SliderCollection
     Click link  SliderCollection
     Click link  Festival de danse folklorique
     Location Should Be  http://localhost:55001/plone/2-festival-de-danse-folklorique
 
 Test Event in Slider
-    Logged as owner
+    Enable autologin as  Site Administrator
     Page Should Contain Link  SliderCollection
     Click link  SliderCollection
     Click Element  css=div#carousel ul.slides li:nth-child(3)
