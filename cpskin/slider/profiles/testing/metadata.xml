@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <metadata>
-  <version>1000</version>
   <dependencies>
+   <dependency>profile-cpskin.slider:default</dependency>
    <dependency>profile-cpskin.core:default</dependency>
   </dependencies>
 </metadata>

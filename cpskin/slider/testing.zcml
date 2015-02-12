@@ -1,0 +1,16 @@
+<configure xmlns="http://namespaces.zope.org/zope"
+           xmlns:genericsetup="http://namespaces.zope.org/genericsetup">
+
+  <include file="configure.zcml" />
+  <include package="jarn.jsi18n" />
+  <include package="cpskin.core" />
+
+  <genericsetup:registerProfile
+      name="testing"
+      title="cpskin.slider: testing"
+      directory="profiles/testing"
+      description="Installs CPSkin slider test profile"
+      provides="Products.GenericSetup.interfaces.EXTENSION"
+      />
+
+</configure>

@@ -19,7 +19,7 @@ class CPSkinSliderPloneWithPackageLayer(PloneWithPackageLayer):
     """
 
     def setUpPloneSite(self, portal):
-        applyProfile(portal, 'cpskin.slider:default')
+        applyProfile(portal, 'cpskin.slider:testing')
         setRoles(portal, TEST_USER_ID, ['Manager'])
         login(portal, TEST_USER_NAME)
         api.content.create(
@@ -51,11 +51,12 @@ class CPSkinSliderPloneWithPackageLayer(PloneWithPackageLayer):
                   }]
         collection.setQuery(query)
         collection.setSort_on('getId')
+        api.portal.set_registry_record('cpskin.core.interfaces.ICPSkinSettings.auto_play_slider', False)
 
 
 CPSKIN_SLIDER_FIXTURE = CPSkinSliderPloneWithPackageLayer(
     name="CPSKIN_SLIDER_FIXTURE",
-    zcml_filename="configure.zcml",
+    zcml_filename="testing.zcml",
     zcml_package=cpskin.slider)
 
 

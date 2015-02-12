@@ -9,6 +9,7 @@
   <five:registerPackage package="." initialize=".initialize" />
 
   <include package="cpskin.locales"/>
+  <include package="cpskin.core" />
   <include package=".browser"/>
   <include package=".portlets"/>
 

@@ -132,7 +132,7 @@
             </div>
 
             <!-- slider_config coming from cpskin.core -->
-            <script type="text/javascript" tal:content="slider_config">
+            <script type="text/javascript" tal:content="context/@@slider_config_view">
             </script>
             </metal:entries>
         </metal:block>
