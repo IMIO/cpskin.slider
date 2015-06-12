@@ -1,19 +1,14 @@
 Changelog
 =========
 
-0.1.2 (unreleased)
-------------------
-
-- Nothing changed yet.
-
-
-0.1.1 (2014-10-22)
-------------------
-
-- Nothing changed yet.
-
-
-0.1 (2014-07-02)
+1.0.1 (unreleased)
 ----------------
 
-- Nothing changed yet.
+- Get slider config from cpskin.core to have registry parameters (imio #9515)
+  [schminitz]
+
+
+1.0 (2014-05-06)
+----------------
+
+- Initial release
