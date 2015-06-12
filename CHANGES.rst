@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.0.1 (unreleased)
-----------------
+1.0.1 (2015-06-12)
+------------------
 
 - Get slider config from cpskin.core to have registry parameters (imio #9515)
   [schminitz]
