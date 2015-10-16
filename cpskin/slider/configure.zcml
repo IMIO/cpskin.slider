@@ -33,5 +33,11 @@
       name="jquery.flexslider"
       directory="resources" />
 
+  <browser:resourceDirectory
+    name="cpskin.slider"
+    directory="browser/static"
+    layer=".interfaces.ICPSkinSliderLayer"
+    />    
+
 
 </configure>

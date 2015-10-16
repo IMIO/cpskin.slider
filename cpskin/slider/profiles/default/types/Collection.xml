@@ -4,6 +4,7 @@
    i18n:domain="cpskin" xmlns:i18n="http://xml.zope.org/namespaces/i18n">
  <property name="view_methods" purge="False">
   <element value="slider_view"/>
+  <element value="slider_view_vertical"/>
  </property>
 </object>
 

@@ -1,0 +1,154 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+<metal:javascript_head_slot fill-slot="javascript_head_slot">
+        
+    <script type="text/javascript"
+            charset="utf-8"
+            src=""
+            tal:attributes="src string:${context/@@plone_portal_state/portal_url}/++resource++cpskin.slider/jquery.sliderpro.js"></script>
+
+</metal:javascript_head_slot>
+
+
+<body>
+    
+<metal:content-core fill-slot="content-core">
+      <metal:block define-macro="content-core">
+        <metal:block use-macro="context/standard_view/macros/content-core">
+            <metal:entries fill-slot="entries">
+<script type="text/javascript">
+$( document ).ready(function() {
+     $('.flexslider').flexslider({animation: "slide", pausePlay: true})
+})
+
+
+        $( document ).ready(function( $ ) {
+            $( '#example5' ).sliderPro({
+                width: 670,
+                height: 500,
+                orientation: 'vertical',
+                loop: false,
+                arrows: true,
+                buttons: false,
+                thumbnailsPosition: 'right',
+                thumbnailPointer: true,
+                thumbnailWidth: 290,
+                breakpoints: {
+                    800: {
+                        thumbnailsPosition: 'bottom',
+                        thumbnailWidth: 270,
+                        thumbnailHeight: 100
+                    },
+                    500: {
+                        thumbnailsPosition: 'bottom',
+                        thumbnailWidth: 120,
+                        thumbnailHeight: 50
+                    }
+                }
+            });
+        });
+</script>        
+                <div class="Box-container BoxSlider">                   
+                    <div id="example5" class="slider-pro">
+                        <tal:entry tal:repeat="item batch">
+                        <tal:block tal:define="item_url item/getURL;
+                                               item_id item/getId;
+                                               item_description item/Description;
+                                               item_type item/Type;
+                                               item_modified item/ModificationDate;
+                                               item_created item/CreationDate;
+                                               item_icon item/getIcon;
+                                               item_type_class item/ContentTypeClass;
+                                               item_wf_state_class python:'state-' + normalizeString(item.review_state());
+                                               item_creator item/Creator;
+                                               item_start python:(item.start or item.StartDate) if item_type == 'Event' else None;
+                                               item_end python:(item.end or item.EndDate) if item_type == 'Event' else None;
+                                               item_modified item/ModificationDate;
+                                               item_sametime python: item_start == item_end;
+                                               item_samedate python: (item_end - item_start &lt; 1) if item_type == 'Event' else False">                        
+                            <div class="sp-slides popup-gallery">
+                                <div class="sp-slide" tal:define="obj item/getObject;
+                                                                  item_has_leadimage python: getattr(item, 'hasContentLeadImage', False);
+                                                                  item_has_thumb exists:obj/image_thumb;">
+                                    <a href="#" tal:condition="python: item_has_leadimage or item_has_thumb"
+                                       tal:attributes="href item/getURL">
+                                        
+                                        <tal:if tal:condition="item_has_thumb">
+                                             <img class="sp-image" src="" alt=""
+                                                  tal:define="scales obj/@@images;
+                                                              scale python:scales.scale('image', 'large');
+                                                              navroot context/@@plone_portal_state/navigation_root_url"
+                                                  tal:replace="structure python:scale and scale.tag(css_class='flexsliderimg') or None" />
+                                         </tal:if>
+                                         <tal:if tal:condition="item_has_leadimage">
+                                             <img class="sp-image" src="" alt=""
+                                                  tal:define="leadview nocall:context/aq_parent/@@folder_leadimage_view;
+                                                              navroot context/@@plone_portal_state/navigation_root_url"
+                                                  tal:attributes="data-src python: item.getURL() + '/leadImage_large';
+                                                                  data-retina python: item.getURL() + '/leadImage_large'" />
+                                         </tal:if>                                        
+                                    </a>    
+                                    <div class="sp-caption" tal:content="python:item_description"></div>
+                                </div>
+                            </div>                          
+                        </tal:block>
+                        </tal:entry>
+                        <tal:entry tal:repeat="item batch">
+                        <tal:block tal:define="item_url item/getURL;
+                                               item_id item/getId;
+                                               item_description item/Description;
+                                               item_title item/Title;
+                                               item_type item/Type;
+                                               item_modified item/ModificationDate;
+                                               item_created item/CreationDate;
+                                               item_icon item/getIcon;
+                                               item_type_class item/ContentTypeClass;
+                                               item_wf_state_class python:'state-' + normalizeString(item.review_state());
+                                               item_creator item/Creator;
+                                               item_start python:(item.start or item.StartDate) if item_type == 'Event' else None;
+                                               item_end python:(item.end or item.EndDate) if item_type == 'Event' else None;
+                                               item_modified item/ModificationDate;
+                                               item_sametime python: item_start == item_end;
+                                               item_samedate python: (item_end - item_start &lt; 1) if item_type == 'Event' else False">                                                
+                            <div class="sp-thumbnails" tal:define="obj item/getObject;
+                                                                   item_has_leadimage python: getattr(item, 'hasContentLeadImage', False);
+                                                                   item_has_thumb exists:obj/image_thumb;">
+                                <div class="sp-thumbnail">
+                                    <div class="sp-thumbnail-image-container">
+                                         <tal:if tal:condition="item_has_thumb">
+                                             <img class="sp-thumbnail-image"  src="" alt=""
+                                                  tal:define="scales obj/@@images;
+                                                              scale python:scales.scale('image', 'thumb')"
+                                                  tal:replace="structure python:scale and scale.tag(css_class='sp-thumbnail-image') or None" />
+                                         </tal:if>
+                                         <tal:if tal:condition="item_has_leadimage">
+                                             <img class="sp-thumbnail-image"  src="" alt=""
+                                                  tal:define="leadview nocall:context/aq_parent/@@folder_leadimage_view"
+                                                  tal:replace="structure python:leadview.tag(obj, css_class='sp-thumbnail-image') or None" />
+                                         </tal:if>
+                                    </div>
+                                    <div class="sp-thumbnail-text">
+                                        <div class="sp-thumbnail-title" tal:content="python:item_title"></div>
+                                        <div class="sp-thumbnail-description" tal:content="python:item_description"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </tal:block>
+                        </tal:entry>                            
+                    </div>
+                </div>               
+            <!-- slider_config coming from cpskin.core -->
+            <script type="text/javascript" tal:content="context/@@slider_config_view">
+            </script>
+            </metal:entries>
+        </metal:block>
+      </metal:block>
+    </metal:content-core>
+</body>
+</html>                

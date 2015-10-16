@@ -14,6 +14,14 @@
     permission="zope2.View"
     layer="..interfaces.ICPSkinSliderLayer"
     />
+  
+  <browser:page
+    for="plone.app.collection.interfaces.ICollection"
+    name="slider_view_vertical"
+    template="collection_slider_view_vertical.pt"
+    permission="zope2.View"
+    layer="..interfaces.ICPSkinSliderLayer"
+    />  
 
   <browser:menuItem
     for="plone.app.collection.interfaces.ICollection"
@@ -24,6 +32,4 @@
     i18n:attributes="title"
     layer="..interfaces.ICPSkinSliderLayer"
     />
-
-
 </configure>
