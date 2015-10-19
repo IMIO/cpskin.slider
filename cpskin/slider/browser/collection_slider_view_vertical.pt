@@ -59,6 +59,7 @@ $( document ).ready(function() {
                         <tal:entry tal:repeat="item batch">
                         <tal:block tal:define="item_url item/getURL;
                                                item_id item/getId;
+                                               item_title item/Title;
                                                item_description item/Description;
                                                item_type item/Type;
                                                item_modified item/ModificationDate;
@@ -92,8 +93,9 @@ $( document ).ready(function() {
                                                               navroot context/@@plone_portal_state/navigation_root_url"
                                                   tal:attributes="data-src python: item.getURL() + '/leadImage_large';
                                                                   data-retina python: item.getURL() + '/leadImage_large'" />
-                                         </tal:if>                                        
+                                         </tal:if>                                  
                                     </a>    
+                                    <div class="sp-caption" tal:content="python:item_title"></div-->
                                 </div>
                             </div>                          
                         </tal:block>
