@@ -94,7 +94,6 @@ $( document ).ready(function() {
                                                                   data-retina python: item.getURL() + '/leadImage_large'" />
                                          </tal:if>                                        
                                     </a>    
-                                    <div class="sp-caption" tal:content="python:item_description"></div>
                                 </div>
                             </div>                          
                         </tal:block>
@@ -135,7 +134,6 @@ $( document ).ready(function() {
                                     </div>
                                     <div class="sp-thumbnail-text">
                                         <div class="sp-thumbnail-title" tal:content="python:item_title"></div>
-                                        <div class="sp-thumbnail-description" tal:content="python:item_description"></div>
                                     </div>
                                 </div>
                             </div>
