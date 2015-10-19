@@ -2,7 +2,7 @@
 <object name="portal_javascripts">
         <javascript
                 id="++resource++jquery.flexslider/javascript/jquery.sliderpro.js"
-                authenticated="True"
+                authenticated="False"
                 cacheable="True" compression="safe" cookable="True"
                 enabled="True" expression=""  inline="False" />
 </object>
