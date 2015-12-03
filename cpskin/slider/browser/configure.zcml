@@ -14,17 +14,45 @@
     permission="zope2.View"
     layer="..interfaces.ICPSkinSliderLayer"
     />
-  
+
   <browser:page
     for="plone.app.collection.interfaces.ICollection"
     name="slider_view_vertical"
     template="collection_slider_view_vertical.pt"
     permission="zope2.View"
     layer="..interfaces.ICPSkinSliderLayer"
-    />  
+    />
 
   <browser:menuItem
     for="plone.app.collection.interfaces.ICollection"
+    menu="plone_displayviews"
+    title="Slider view"
+    action="@@slider_view"
+    description=""
+    i18n:attributes="title"
+    layer="..interfaces.ICPSkinSliderLayer"
+    />
+
+  <browser:page
+    for="plone.app.contenttypes.interfaces.ICollection"
+    name="slider_view"
+    template="collection_slider_dx_view.pt"
+    class="plone.app.contenttypes.browser.collection.CollectionView"
+    permission="zope2.View"
+    layer="..interfaces.ICPSkinSliderLayer"
+    />
+
+  <browser:page
+    for="plone.app.contenttypes.interfaces.ICollection"
+    name="slider_view_vertical"
+    template="collection_slider_view_vertical.pt"
+    class="plone.app.contenttypes.browser.collection.CollectionView"
+    permission="zope2.View"
+    layer="..interfaces.ICPSkinSliderLayer"
+    />
+
+  <browser:menuItem
+    for="plone.app.contenttypes.interfaces.ICollection"
     menu="plone_displayviews"
     title="Slider view"
     action="@@slider_view"
