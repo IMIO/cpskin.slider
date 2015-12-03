@@ -4,7 +4,8 @@ Changelog
 1.0.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add dexterity and plone.app.contenttypes support.
+  [bsuttor]
 
 
 1.0.1 (2015-06-12)
