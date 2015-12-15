@@ -9,7 +9,7 @@
 
 .slider-pro {
 	position: relative;
-	margin: 2% auto;
+	margin: 0 auto 2%;
 	background: #FFF;
 	-moz-box-sizing: content-box;
 	box-sizing: content-box;
@@ -149,6 +149,7 @@
 }
 
 .sp-right-thumbnails.sp-has-pointer .sp-thumbnail {
+	background-color:#f0f0f0;
 	position: absolute;
 	left: 18px;
 	margin-left: 0 !important;
@@ -845,10 +846,10 @@ a.sp-video:after {
 }
 
 #example5 .sp-thumbnail-text {
+	background-color:#f0f0f0;
 	width: 170px;
 	float: right;
 	padding: 8px;
-	background-color: #F0F0F0;
 	-moz-box-sizing: border-box;
 	box-sizing: border-box;
 }

@@ -1,0 +1,130 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="here/main_template/macros/master"
+      i18n:domain="plone">
+
+<metal:javascript_head_slot fill-slot="javascript_head_slot">
+
+    <script type="text/javascript"
+            charset="utf-8"
+            src=""
+            tal:attributes="src string:${context/@@plone_portal_state/portal_url}/++resource++jquery.flexslider/javascript/jquery.flexslider-min.js"></script>
+    <script type="text/javascript"
+            charset="utf-8"
+            src=""
+            tal:attributes="src string:${context/@@plone_portal_state/portal_url}/++resource++jquery.flexslider/javascript/cpskin.slider.js"></script>
+
+</metal:javascript_head_slot>
+
+
+<body>
+    <metal:content-core fill-slot="content-core">
+      <metal:block define-macro="content-core">
+        <metal:block use-macro="context/standard_view/macros/content-core">
+            <metal:entries fill-slot="entries">
+            <div id="slider" class="flexslider">
+            <ul class="slides">
+                    <tal:entry tal:repeat="item context/results">
+                    <tal:block tal:define="item_url item/getURL;
+                                           item_id item/getId;
+                                           item_description item/Description;
+                                           item_type item/Type;
+                                           item_modified item/ModificationDate;
+                                           item_created item/CreationDate;
+                                           item_icon item/getIcon;
+                                           item_type_class item/ContentTypeClass;
+                                           item_wf_state_class python:'state-' + item.review_state();
+                                           item_creator item/Creator;
+                                           item_start python:(item.start or item.StartDate) if item_type == 'Event' else None;
+                                           item_end python:(item.end or item.EndDate) if item_type == 'Event' else None;
+                                           item_modified item/ModificationDate;
+                                           item_sametime python: item_start == item_end;
+                                           item_samedate python: (item_end - item_start &lt; 1) if item_type == 'Event' else False">
+
+                                    <li tal:define="obj item/getObject;
+                                                  scale_func obj/@@images;
+                                                  scaled_image python: getattr(obj, 'image', False) and scale_func.scale('image', scale='large')">
+
+                                      <a href="#"
+                                         class="linkimg"
+                                         tal:condition="python: scaled_image"
+                                         tal:attributes="href item/getURL">
+
+                                        <img tal:replace="structure python: scaled_image.tag(css_class='flexsliderimg')" />
+
+                                      </a>
+                                      <div class="flex-caption">
+                                          <h2>
+                                              <a tal:attributes="href item/getURL"
+                                                 tal:content="item/Title">Content title</a>
+                                         </h2>
+                                         <p> <a tal:attributes="href item/getURL"
+                                                tal:content="item/Description">
+                                               Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
+                                               sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
+                                               Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
+                                               lobortis nisl ut aliquip ex ea commodo consequat.</a>
+                                          </p>
+                                      </div>
+                                  </li>
+                    </tal:block>
+                    </tal:entry>
+            </ul>
+            </div>
+            <div id="carousel" class="flexslider">
+            <ul class="slides">
+                    <tal:entry tal:repeat="item context/results">
+                    <tal:block tal:define="item_url item/getURL;
+                                           item_id item/getId;
+                                           item_description item/Description;
+                                           item_type item/Type;
+                                           item_modified item/ModificationDate;
+                                           item_created item/CreationDate;
+                                           item_icon item/getIcon;
+                                           item_type_class item/ContentTypeClass;
+                                           item_wf_state_class python:'state-' + item.review_state();
+                                           item_creator item/Creator;
+                                           item_start python:(item.start or item.StartDate) if item_type == 'Event' else None;
+                                           item_end python:(item.end or item.EndDate) if item_type == 'Event' else None;
+                                           item_modified item/ModificationDate;
+                                           item_sametime python: item_start == item_end;
+                                           item_samedate python: (item_end - item_start &lt; 1) if item_type == 'Event' else False">
+
+                                  <li tal:define="obj item/getObject;
+                                                  scale_func obj/@@images;
+                                                  scaled_image python: getattr(obj, 'image', False) and scale_func.scale('image', scale='mini')">
+                                      <a href="#"
+                                         class="linkimg"
+                                         tal:condition="python: scaled_image"
+                                         tal:define="scale_func obj/@@images;
+                                                     scaled_image python: getattr(obj, 'image', False) and scale_func.scale('image', scale='thumb')"
+                                         tal:attributes="href item/getURL">
+
+                                           <img tal:replace="structure python: scaled_image.tag(css_class='flexsliderimg')" />
+
+
+                                      </a>
+                                      <div class="flex-caption">
+                                          <h2>
+                                              <a tal:attributes="href item/getURL"
+                                                 tal:content="item/Title">Content title</a>
+                                         </h2>
+                                      </div>
+                                  </li>
+                    </tal:block>
+                    </tal:entry>
+            </ul>
+            </div>
+
+            <!-- slider_config coming from cpskin.core -->
+            <script type="text/javascript" tal:content="context/@@slider_config_view">
+            </script>
+            </metal:entries>
+        </metal:block>
+      </metal:block>
+    </metal:content-core>
+</body>
+</html>
