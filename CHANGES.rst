@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.0.2 (unreleased)
+1.0.2 (2016-01-21)
 ------------------
 
 - Add dexterity and plone.app.contenttypes support.
