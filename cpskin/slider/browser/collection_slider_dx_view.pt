@@ -38,15 +38,15 @@
                                            item_type_class item/ContentTypeClass;
                                            item_wf_state_class python:'state-' + item.review_state();
                                            item_creator item/Creator;
-                                           item_start python:(item.start or item.StartDate) if item_type == 'Event' else None;
-                                           item_end python:(item.end or item.EndDate) if item_type == 'Event' else None;
+                                           item_start python:(item.start) if item_type == 'Event' else None;
+                                           item_end python:(item.end) if item_type == 'Event' else None;
                                            item_modified item/ModificationDate;
                                            item_sametime python: item_start == item_end;
                                            item_samedate python: (item_end - item_start &lt; 1) if item_type == 'Event' else False">
 
                                     <li tal:define="obj item/getObject;
                                                   scale_func obj/@@images;
-                                                  scaled_image python: getattr(obj, 'image', False) and scale_func.scale('image', scale='large')">
+                                                  scaled_image python: getattr(obj, 'image', False) and scale_func.scale('image', scale='slider')">
 
                                       <a href="#"
                                          class="linkimg"
@@ -87,8 +87,8 @@
                                            item_type_class item/ContentTypeClass;
                                            item_wf_state_class python:'state-' + item.review_state();
                                            item_creator item/Creator;
-                                           item_start python:(item.start or item.StartDate) if item_type == 'Event' else None;
-                                           item_end python:(item.end or item.EndDate) if item_type == 'Event' else None;
+                                           item_start python:(item.start) if item_type == 'Event' else None;
+                                           item_end python:(item.end) if item_type == 'Event' else None;
                                            item_modified item/ModificationDate;
                                            item_sametime python: item_start == item_end;
                                            item_samedate python: (item_end - item_start &lt; 1) if item_type == 'Event' else False">
@@ -100,7 +100,7 @@
                                          class="linkimg"
                                          tal:condition="python: scaled_image"
                                          tal:define="scale_func obj/@@images;
-                                                     scaled_image python: getattr(obj, 'image', False) and scale_func.scale('image', scale='thumb')"
+                                                     scaled_image python: getattr(obj, 'image', False) and scale_func.scale('image', scale='carousel')"
                                          tal:attributes="href item/getURL">
 
                                            <img tal:replace="structure python: scaled_image.tag(css_class='flexsliderimg')" />

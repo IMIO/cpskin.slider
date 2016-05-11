@@ -4,7 +4,8 @@ Changelog
 1.0.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Use carousel and slider image scale for slider.
+  [bsuttor]
 
 
 1.0.2 (2016-01-21)
