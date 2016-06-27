@@ -4,6 +4,9 @@ Changelog
 1.0.3 (unreleased)
 ------------------
 
+- Use dynamic image scale.
+  [bsuttor]
+
 - Use carousel and slider image scale for slider.
   [bsuttor]
 
