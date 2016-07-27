@@ -1,7 +1,23 @@
 Changelog
 =========
 
-1.0.2 (unreleased)
+1.0.4 (unreleased)
+------------------
+
+- Nothing changed yet.
+
+
+1.0.3 (2016-06-27)
+------------------
+
+- Use dynamic image scale.
+  [bsuttor]
+
+- Use carousel and slider image scale for slider.
+  [bsuttor]
+
+
+1.0.2 (2016-01-21)
 ------------------
 
 - Add dexterity and plone.app.contenttypes support.

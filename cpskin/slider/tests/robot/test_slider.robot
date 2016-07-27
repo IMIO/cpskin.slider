@@ -36,7 +36,7 @@ Test Url Carousel
     Page Should Contain Link  SliderCollection
     Click link  SliderCollection
     Click link  Festival de danse folklorique
-    Location Should Be  http://localhost:55001/plone/2-festival-de-danse-folklorique
+    Location Should Be  ${PLONE_URL}/2-festival-de-danse-folklorique
 
 Test Event in Slider
     Enable autologin as  Site Administrator
@@ -44,7 +44,7 @@ Test Event in Slider
     Click link  SliderCollection
     Click Element  css=div#carousel ul.slides li:nth-child(3)
     Click link  Evénement important
-    Location Should Be  http://localhost:55001/plone/3-evenement-important
+    Location Should Be  ${PLONE_URL}/3-evenement-important
 
 
 *** Keywords ***
