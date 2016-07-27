@@ -1,3 +1,5 @@
+# bin/robot-server cpskin.slider.testing.CPSKIN_SLIDER_ROBOT_TESTING
+# bin/robot cpskin/slider/tests/robot/test_slider.robot
 *** Settings ***
 
 Resource  plone/app/robotframework/keywords.robot
