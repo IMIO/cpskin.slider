@@ -1,4 +1,4 @@
-# bin/robot-server cpskin.slider.testing.CPSKIN_SLIDER_ROBOT_TESTING
+# bin/robot-server --reload-path cpskin cpskin.slider.testing.CPSKIN_SLIDER_ROBOT_TESTING
 # bin/robot cpskin/slider/tests/robot/test_slider.robot
 *** Settings ***
 
