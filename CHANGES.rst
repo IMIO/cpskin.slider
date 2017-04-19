@@ -4,7 +4,8 @@ Changelog
 1.0.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Give id to slider_config to allow multiple sliders on page : #16991
+  [laulaz]
 
 
 1.0.3 (2016-06-27)

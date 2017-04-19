@@ -25,7 +25,9 @@
       <metal:block define-macro="content-core">
         <metal:block use-macro="context/standard_view/macros/content-core">
             <metal:entries fill-slot="entries">
-            <div id="slider" class="flexslider">
+            <div id=""
+                 class="slider flexslider"
+                 tal:attributes="id string:slider-${context/id}">
             <ul class="slides">
                     <tal:entry tal:repeat="item batch">
                     <tal:block tal:define="item_url item/getURL;
@@ -81,7 +83,9 @@
                     </tal:entry>
             </ul>
             </div>
-            <div id="carousel" class="flexslider">
+            <div id=""
+                 class="carousel flexslider"
+                 tal:attributes="id string:carousel-${context/id}">
             <ul class="slides">
                     <tal:entry tal:repeat="item batch">
                     <tal:block tal:define="item_url item/getURL;
@@ -132,7 +136,9 @@
             </div>
 
             <!-- slider_config coming from cpskin.core -->
-            <script type="text/javascript" tal:content="context/@@slider_config_view">
+            <script type="text/javascript"
+                    tal:define="config nocall:context/@@slider_config_view"
+                    tal:content="python: config(context.id)">
             </script>
             </metal:entries>
         </metal:block>
