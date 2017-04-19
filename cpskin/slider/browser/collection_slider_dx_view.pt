@@ -123,6 +123,10 @@
                     </tal:block>
                     </tal:entry>
             </ul>
+            <div class="slides-count">
+                <span class="current-slide"/> / <span class="total-slides"/>
+            </div>
+
             </div>
 
             <!-- slider_config coming from cpskin.core -->

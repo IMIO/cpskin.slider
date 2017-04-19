@@ -4,6 +4,9 @@ Changelog
 1.0.4 (unreleased)
 ------------------
 
+- Add placeholders for slide number / count calculation : #16991
+  [laulaz]
+
 - Give id to slider_config to allow multiple sliders on page : #16991
   [laulaz]
 
