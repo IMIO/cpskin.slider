@@ -139,7 +139,9 @@
                     </div>
                 </div>
             <!-- slider_config coming from cpskin.core -->
-            <script type="text/javascript" tal:content="context/@@slider_config_view">
+            <script type="text/javascript"
+                    tal:define="config nocall:context/@@slider_config_view"
+                    tal:content="python: config(context)">
             </script>
             </metal:entries>
         </metal:block>
