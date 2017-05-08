@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.0.4 (unreleased)
-------------------
+1.1 (2017-05-08)
+----------------
 
 - Add placeholders for slide number / count calculation : #16991
   [laulaz]
