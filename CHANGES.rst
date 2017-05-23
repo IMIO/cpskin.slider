@@ -4,7 +4,8 @@ Changelog
 1.1.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Add link for 'see all' on sliders
+  [AuroreMariscal]
 
 
 1.1 (2017-05-08)
