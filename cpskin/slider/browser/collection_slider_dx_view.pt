@@ -53,11 +53,19 @@
 
                                       <a href="#"
                                          class="linkimg"
-                                         tal:condition="python: scaled_image"
+                                         tal:condition="python: scaled_image and item_type != 'Media Link'"
                                          tal:attributes="href item/getURL">
 
                                         <img tal:replace="structure python: scaled_image.tag(css_class='flexsliderimg')" />
 
+                                      </a>
+                                      <a href="#"
+                                         class="linkimg"
+                                         tal:condition="python: item_type == 'Media Link'"
+                                         tal:define="video python: view.get_video(item)"
+                                         tal:attributes="href item/getURL">
+                                           <span tal:content="item/remoteUrl"></span>
+                                           <div tal:content='structure video' />
                                       </a>
                                       <div class="flex-caption">
                                           <h2>
@@ -104,14 +112,24 @@
                                                   scaled_image python: getattr(obj, 'image', False) and scale_func.scale('image', scale='mini')">
                                       <a href="#"
                                          class="linkimg"
-                                         tal:condition="python: scaled_image"
+                                         tal:condition="python: scaled_image and item_type != 'Media Link'"
                                          tal:define="scale_func obj/@@images;
                                                      scaled_image python: getattr(obj, 'image', False) and scale_func.scale('image', scale=carousel_scale)"
                                          tal:attributes="href item/getURL">
 
+                                           <span tal:content="item_type"></span>
                                            <img tal:replace="structure python: scaled_image.tag(css_class='flexsliderimg')" />
 
 
+                                      </a>
+                                      <a href="#"
+                                         class="linkimg"
+                                         tal:condition="python: item_type == 'Media Link'"
+                                         tal:define="video python: view.get_video(item)"
+                                         tal:attributes="href item/getURL">
+                                           <span tal:content="item_type"></span>
+                                           <span tal:content="item/remoteUrl"></span>
+                                           <div tal:content='structure video' />
                                       </a>
                                       <div class="flex-caption">
                                           <h2>
