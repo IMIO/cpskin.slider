@@ -25,6 +25,7 @@
       <metal:block define-macro="content-core">
         <metal:block use-macro="context/standard_view/macros/content-core">
             <metal:entries fill-slot="entries">
+            <div tal:define="bloc_class python: view.get_block_class(content)">
             <div id=""
                  class="slider flexslider"
                  tal:attributes="id string:slider-${context/id}">
@@ -105,8 +106,8 @@
                                            item_end python:(item.end) if item_type == 'Event' else None;
                                            item_modified item/ModificationDate;
                                            item_sametime python: item_start == item_end;
-                                           item_samedate python: (item_end - item_start &lt; 1) if item_type == 'Event' else False">
-
+                                           item_samedate python: (item_end - item_start &lt; 1) if item_type == 'Event' else False;
+                                           link python: 'slider_multiple_link' if bloc_class == 'slider-multiple' else None">
                                   <li tal:define="obj item/getObject;
                                                   scale_func obj/@@images;
                                                   scaled_image python: getattr(obj, 'image', False) and scale_func.scale('image', scale='mini')">
@@ -115,7 +116,7 @@
                                          tal:condition="python: scaled_image and item_type != 'Media Link'"
                                          tal:define="scale_func obj/@@images;
                                                      scaled_image python: getattr(obj, 'image', False) and scale_func.scale('image', scale=carousel_scale)"
-                                         tal:attributes="href item/getURL">
+                                         tal:attributes="href item/getURL; class string:linkimg ${link}">
 
                                            <span tal:content="item_type"></span>
                                            <img tal:replace="structure python: scaled_image.tag(css_class='flexsliderimg')" />
@@ -133,7 +134,7 @@
                                       </a>
                                       <div class="flex-caption">
                                           <h2>
-                                              <a tal:attributes="href item/getURL"
+                                              <a tal:attributes="href item/getURL; class string:linkimg ${link}"
                                                  tal:content="item/Title">Content title</a>
                                          </h2>
                                       </div>
@@ -160,6 +161,7 @@
                     tal:define="config nocall:context/@@slider_config_view"
                     tal:content="python: config(context)">
             </script>
+            </div>
             </metal:entries>
         </metal:block>
       </metal:block>
