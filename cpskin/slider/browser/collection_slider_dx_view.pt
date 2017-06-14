@@ -118,7 +118,6 @@
                                                      scaled_image python: getattr(obj, 'image', False) and scale_func.scale('image', scale=carousel_scale)"
                                          tal:attributes="href item/getURL; class string:linkimg ${link}">
 
-                                           <span tal:content="item_type"></span>
                                            <img tal:replace="structure python: scaled_image.tag(css_class='flexsliderimg')" />
 
 
@@ -128,7 +127,6 @@
                                          tal:condition="python: item_type == 'Media Link'"
                                          tal:define="video python: view.get_video(item)"
                                          tal:attributes="href item/getURL">
-                                           <span tal:content="item_type"></span>
                                            <span tal:content="item/remoteUrl"></span>
                                            <div tal:content='structure video' />
                                       </a>
