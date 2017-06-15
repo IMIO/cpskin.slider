@@ -1,8 +1,8 @@
 Changelog
 =========
 
-1.1.1 (unreleased)
-------------------
+1.2 (2017-06-15)
+----------------
 
 - Add redirection for slider-multiple #17423
   [AuroreMariscal]
