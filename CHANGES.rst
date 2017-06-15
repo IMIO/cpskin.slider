@@ -4,6 +4,12 @@ Changelog
 1.1.1 (unreleased)
 ------------------
 
+- Add redirection for slider-multiple #17423
+  [AuroreMariscal]
+
+- Add video on slide #17396
+  [AuroreMariscal]
+
 - Add link for 'see all' on sliders
   [AuroreMariscal]
 
