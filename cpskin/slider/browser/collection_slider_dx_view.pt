@@ -81,6 +81,11 @@
                                                lobortis nisl ut aliquip ex ea commodo consequat.</a>
                                           </p>
                                       </div>
+                                      <div class="read-next-link">
+                                           <a href=""
+                                              tal:attributes="href item/getURL"
+                                              i18n:translate="">Lire la suite</a>
+                                      </div>
                                   </li>
                     </tal:block>
                     </tal:entry>
@@ -140,6 +145,12 @@
                                               <a tal:attributes="href item/getURL; class string:linkimg ${link_class}"
                                                  tal:content="item/Title">Content title</a>
                                          </h2>
+                                      </div>
+
+                                      <div class="read-next-link">
+                                           <a href=""
+                                              tal:attributes="href item/getURL"
+                                              i18n:translate="">Lire la suite</a>
                                       </div>
                                   </li>
                     </tal:block>

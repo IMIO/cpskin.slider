@@ -4,6 +4,9 @@ Changelog
 1.2.1 (unreleased)
 ------------------
 
+- Add "Read next" links : #17895
+  [laulaz]
+
 - Show publication date in slider-multiple : #17895
   [laulaz]
 
