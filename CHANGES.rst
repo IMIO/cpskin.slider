@@ -4,7 +4,8 @@ Changelog
 1.2.1 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Show publication date in slider-multiple : #17895
+  [laulaz]
 
 
 1.2 (2017-06-15)

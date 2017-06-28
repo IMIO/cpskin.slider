@@ -111,6 +111,7 @@
                                   <li tal:define="obj item/getObject;
                                                   scale_func obj/@@images;
                                                   scaled_image python: getattr(obj, 'image', False) and scale_func.scale('image', scale='mini')">
+
                                       <a href="#"
                                          class="linkimg"
                                          tal:condition="python: scaled_image and item_type != 'Media Link'"
@@ -119,9 +120,12 @@
                                          tal:attributes="href item/getURL; class string:linkimg ${link_class}">
 
                                            <img tal:replace="structure python: scaled_image.tag(css_class='flexsliderimg')" />
-
-
                                       </a>
+
+                                      <div class="publication-date"
+                                           tal:condition="python: view.show_publication_date(content, item)"
+                                           tal:content="python: view.toLocalizedTime(item.effective)"></div>
+
                                       <a href="#"
                                          class="linkimg"
                                          tal:condition="python: item_type == 'Media Link'"
@@ -130,6 +134,7 @@
                                            <span tal:content="item/remoteUrl"></span>
                                            <div tal:content='structure video' />
                                       </a>
+
                                       <div class="flex-caption">
                                           <h2>
                                               <a tal:attributes="href item/getURL; class string:linkimg ${link_class}"
