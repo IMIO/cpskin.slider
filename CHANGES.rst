@@ -4,6 +4,9 @@ Changelog
 1.2.1 (unreleased)
 ------------------
 
+- Remove vertical slider WIP tal code to avoid having to maintain it
+  [laulaz]
+
 - Add "Read next" links : #17895
   [laulaz]
 
