@@ -37,12 +37,6 @@
                                            item_id item/getId;
                                            item_description item/Description;
                                            item_type item/Type;
-                                           item_modified item/ModificationDate;
-                                           item_created item/CreationDate;
-                                           item_icon item/getIcon;
-                                           item_type_class item/ContentTypeClass;
-                                           item_wf_state_class python:'state-' + item.review_state();
-                                           item_creator item/Creator;
                                            item_start python:(item.start) if item_type == 'Event' else None;
                                            item_end python:(item.end) if item_type == 'Event' else None;
                                            item_modified item/ModificationDate;
@@ -56,7 +50,7 @@
                                       <a href="#"
                                          class="linkimg"
                                          tal:condition="python: scaled_image and item_type != 'Media Link'"
-                                         tal:attributes="href item/getURL">
+                                         tal:attributes="href item_url">
 
                                         <img tal:replace="structure python: scaled_image.tag(css_class='flexsliderimg')" />
 
@@ -65,17 +59,17 @@
                                          class="linkimg"
                                          tal:condition="python: item_type == 'Media Link'"
                                          tal:define="video python: view.get_video(item)"
-                                         tal:attributes="href item/getURL">
+                                         tal:attributes="href item_url">
                                            <span tal:content="item/remoteUrl"></span>
                                            <div tal:content='structure video' />
                                       </a>
                                       <div class="flex-caption">
                                           <h2>
-                                              <a tal:attributes="href item/getURL"
+                                              <a tal:attributes="href item_url"
                                                  tal:content="item/Title">Content title</a>
                                          </h2>
-                                         <p> <a tal:attributes="href item/getURL"
-                                                tal:content="item/Description">
+                                         <p> <a tal:attributes="href item_url"
+                                                tal:content="item_description">
                                                Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr,
                                                sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.
                                                Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit
@@ -84,7 +78,7 @@
                                       </div>
                                       <div class="read-next-link">
                                            <a href=""
-                                              tal:attributes="href item/getURL"
+                                              tal:attributes="href item_url"
                                               i18n:translate="">Lire la suite</a>
                                       </div>
                                   </li>
@@ -102,12 +96,6 @@
                                            carousel_scale python: getattr(context, 'carousel_image_scale', 'carousel');
                                            item_description item/Description;
                                            item_type item/Type;
-                                           item_modified item/ModificationDate;
-                                           item_created item/CreationDate;
-                                           item_icon item/getIcon;
-                                           item_type_class item/ContentTypeClass;
-                                           item_wf_state_class python:'state-' + item.review_state();
-                                           item_creator item/Creator;
                                            item_start python:(item.start) if item_type == 'Event' else None;
                                            item_end python:(item.end) if item_type == 'Event' else None;
                                            item_modified item/ModificationDate;
@@ -123,7 +111,7 @@
                                          tal:condition="python: scaled_image and item_type != 'Media Link'"
                                          tal:define="scale_func obj/@@images;
                                                      scaled_image python: getattr(obj, 'image', False) and scale_func.scale('image', scale=carousel_scale)"
-                                         tal:attributes="href item/getURL; class string:linkimg ${link_class}">
+                                         tal:attributes="href item_url; class string:linkimg ${link_class}">
 
                                            <img tal:replace="structure python: scaled_image.tag(css_class='flexsliderimg')" />
                                       </a>
@@ -136,21 +124,21 @@
                                          class="linkimg"
                                          tal:condition="python: item_type == 'Media Link'"
                                          tal:define="video python: view.get_video(item)"
-                                         tal:attributes="href item/getURL">
+                                         tal:attributes="href item_url">
                                            <span tal:content="item/remoteUrl"></span>
                                            <div tal:content='structure video' />
                                       </a>
 
                                       <div class="flex-caption">
                                           <h2>
-                                              <a tal:attributes="href item/getURL; class string:linkimg ${link_class}"
+                                              <a tal:attributes="href item_url; class string:linkimg ${link_class}"
                                                  tal:content="item/Title">Content title</a>
                                          </h2>
                                       </div>
 
                                       <div class="read-next-link">
                                            <a href=""
-                                              tal:attributes="href item/getURL"
+                                              tal:attributes="href item_url"
                                               i18n:translate="">Lire la suite</a>
                                       </div>
                                   </li>
