@@ -4,6 +4,9 @@ Changelog
 1.2.1 (unreleased)
 ------------------
 
+- Apply index view filters / values even on sliders : #18026
+  [laulaz]
+
 - Remove vertical slider WIP tal code to avoid having to maintain it
   [laulaz]
 

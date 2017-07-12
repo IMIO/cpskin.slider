@@ -24,12 +24,13 @@
     <metal:content-core fill-slot="content-core">
       <metal:block define-macro="content-core">
         <metal:block use-macro="context/standard_view/macros/content-core">
-            <metal:entries fill-slot="entries">
+          <metal:entries fill-slot="entries">
+            <tal:def tal:define="results python: view.getResults(content, with_sticky=False)">
             <div id=""
                  class="slider flexslider"
                  tal:attributes="id string:slider-${context/id}">
             <ul class="slides">
-                    <tal:entry tal:repeat="item batch">
+                    <tal:entry tal:repeat="item results">
                     <tal:block tal:define="item_url item/getURL;
                                            item_id item/getId;
                                            item_description item/Description;
@@ -87,7 +88,7 @@
                  class="carousel flexslider"
                  tal:attributes="id string:carousel-${context/id}">
             <ul class="slides">
-                    <tal:entry tal:repeat="item batch">
+                    <tal:entry tal:repeat="item results">
                     <tal:block tal:define="item_url item/getURL;
                                            item_id item/getId;
                                            item_description item/Description;
@@ -144,7 +145,8 @@
                     tal:define="config nocall:context/@@slider_config_view"
                     tal:content="python: config(context)">
             </script>
-            </metal:entries>
+            </tal:def>
+          </metal:entries>
         </metal:block>
       </metal:block>
     </metal:content-core>
