@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.2.1 (unreleased)
+1.2.1 (2017-07-17)
 ------------------
 
 - Apply index view filters / values even on sliders : #18026
