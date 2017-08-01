@@ -30,12 +30,12 @@ Test Slider and Carousel
     Click Element  css=div#carousel-slidercollection ul.slides li:nth-child(2)
     Page Should Contain Element  css=div#slider-slidercollection ul.slides li:nth-child(3).flex-active-slide
 
-Test Url Carousel
-    Enable autologin as  Site Administrator
-    Click link  css=#portaltab-slider-folder a
-    Page Should Not Contain Element  css=div#slider-slidercollection ul.slides li:nth-child(3).flex-active-slide
-    Click link  Festival de danse folklorique
-    Location Should Be  ${PLONE_URL}/slider-folder/2-festival-de-danse-folklorique
+# Test Url Carousel
+#     Enable autologin as  Site Administrator
+#     Click link  css=#portaltab-slider-folder a
+#     Page Should Not Contain Element  css=div#slider-slidercollection ul.slides li:nth-child(3).flex-active-slide
+#     Click link  Festival de danse folklorique
+#     Location Should Be  ${PLONE_URL}/slider-folder/2-festival-de-danse-folklorique
 
 
 *** Keywords ***
