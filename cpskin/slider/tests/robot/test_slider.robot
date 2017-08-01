@@ -17,34 +17,23 @@ Test Teardown  Close all browsers
 
 Test News Item exists
     Enable autologin as  Site Administrator
-    Page Should Contain Link  SliderCollection
-    Click link  SliderCollection
+    Click link  css=#portaltab-slider-folder a
     Element Should Contain  css=div#slider-slidercollection ul.slides li.flex-active-slide div h2 a  Foire aux boudins
     Click Element  css=div#carousel-slidercollection ul.slides li:nth-child(2)
     Element Text Should Be  css=div#slider-slidercollection ul.slides li.flex-active-slide div h2 a  Festival de danse folklorique
 
 Test Slider and Carousel
     Enable autologin as  Site Administrator
-    Page Should Contain Link  SliderCollection
-    Click link  SliderCollection
+    Click link  css=#portaltab-slider-folder a
     Page Should Not Contain Element  css=div#slider-slidercollection ul.slides li:nth-child(3).flex-active-slide
     Click Element  css=div#carousel-slidercollection ul.slides li:nth-child(2)
     Page Should Contain Element  css=div#slider-slidercollection ul.slides li:nth-child(3).flex-active-slide
 
 Test Url Carousel
     Enable autologin as  Site Administrator
-    Page Should Contain Link  SliderCollection
-    Click link  SliderCollection
+    Click link  css=#portaltab-slider-folder a
     Click link  Festival de danse folklorique
-    Location Should Be  ${PLONE_URL}/2-festival-de-danse-folklorique
-
-Test Event in Slider
-    Enable autologin as  Site Administrator
-    Page Should Contain Link  SliderCollection
-    Click link  SliderCollection
-    Click Element  css=div#carousel-slidercollection ul.slides li:nth-child(3)
-    Click link  Evénement important
-    Location Should Be  ${PLONE_URL}/3-evenement-important
+    Location Should Be  ${PLONE_URL}/slider-folder/2-festival-de-danse-folklorique
 
 
 *** Keywords ***
