@@ -6,9 +6,10 @@ Resource  plone/app/robotframework/keywords.robot
 
 Library  Remote  ${PLONE_URL}/RobotRemote
 
+Suite setup Set Selenium speed 1s
+
 Test Setup  Run keywords  Open test browser
 Test Teardown  Close all browsers
-
 
 *** Variables ***
 
@@ -33,7 +34,6 @@ Test Url Carousel
     Enable autologin as  Site Administrator
     Click link  css=#portaltab-slider-folder a
     Click link  Festival de danse folklorique
-    Sleep  1
     Location Should Be  ${PLONE_URL}/slider-folder/2-festival-de-danse-folklorique
 
 
