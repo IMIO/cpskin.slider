@@ -33,6 +33,7 @@ Test Url Carousel
     Enable autologin as  Site Administrator
     Click link  css=#portaltab-slider-folder a
     Click link  Festival de danse folklorique
+    Sleep  1
     Location Should Be  ${PLONE_URL}/slider-folder/2-festival-de-danse-folklorique
 
 
