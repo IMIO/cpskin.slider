@@ -1,5 +1,11 @@
 language: python
+addons:
+  firefox: "52.0.2"
+sudo: true
 python: 2.7
+cache:
+  directories:
+    - buildout-cache
 install:
   - mkdir -p buildout-cache/downloads
   - python bootstrap.py -c travis.cfg
