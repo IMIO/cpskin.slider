@@ -4,7 +4,8 @@ Changelog
 1.2.2 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Allow to display / hide titles for sliders
+  [laulaz]
 
 
 1.2.1 (2017-07-17)

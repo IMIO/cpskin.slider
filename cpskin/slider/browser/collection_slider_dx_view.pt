@@ -26,6 +26,11 @@
         <metal:block use-macro="context/standard_view/macros/content-core">
           <metal:entries fill-slot="entries">
             <tal:def tal:define="results python: view.getResults(content, with_sticky=False)">
+            <div class="titre-slider"
+                 tal:define="hide_title python: getattr(context, 'hide_title', False);"
+                 tal:condition="not: hide_title">
+                <h2 tal:content="content/Title"></h2>
+            </div>
             <div id=""
                  class="slider flexslider"
                  tal:define="bloc_class python: view.get_block_class(content)"
