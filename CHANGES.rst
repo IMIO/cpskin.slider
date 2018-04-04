@@ -7,6 +7,9 @@ Changelog
 - Allow to display / hide titles for sliders
   [laulaz]
 
+- Fix / improve tests & ignores
+  [bsuttor]
+
 
 1.2.1 (2017-07-17)
 ------------------
