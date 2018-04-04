@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.2.2 (unreleased)
+1.2.2 (2018-04-04)
 ------------------
 
 - Allow to display / hide titles for sliders
