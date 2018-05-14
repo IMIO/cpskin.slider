@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.2.3 (unreleased)
+1.2.3 (2018-05-14)
 ------------------
 
 - Transform sliders titles into links on index view
