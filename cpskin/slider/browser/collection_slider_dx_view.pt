@@ -29,7 +29,11 @@
             <div class="titre-slider"
                  tal:define="hide_title python: getattr(context, 'hide_title', False);"
                  tal:condition="not: hide_title">
-                <h2 tal:content="content/Title"></h2>
+                <a tal:omit-tag='python: view.hide_see_all_link(context)'
+                   href=""
+                   tal:attributes="href string:${context/absolute_url}">
+                    <h2 tal:content="content/Title"></h2>
+                </a>
             </div>
             <div id=""
                  class="slider flexslider"

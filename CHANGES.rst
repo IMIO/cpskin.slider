@@ -4,7 +4,8 @@ Changelog
 1.2.3 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Transform sliders titles into links on index view
+  [laulaz]
 
 
 1.2.2 (2018-04-04)
