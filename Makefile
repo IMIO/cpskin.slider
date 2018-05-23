@@ -8,8 +8,8 @@ bin/python:
 	virtualenv-2.7 .
 	touch $@
 
-bin/buildout: bootstrap.py buildout.cfg bin/python
-	./bin/python bootstrap.py
+bin/buildout: buildout.cfg bin/python
+	./bin/pip install -r requirements.txt
 	touch $@
 
 buildout: bin/buildout
@@ -22,5 +22,5 @@ instance: buildout
 	./bin/instance fg
 
 
-cleanall: 
+cleanall:
 	rm -rf bin develop-eggs downloads include lib parts .installed.cfg .mr.developer.cfg bootstrap.py parts/omelette
