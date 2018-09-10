@@ -4,7 +4,8 @@ Changelog
 1.2.4 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Restore vertical slider
+  [laulaz]
 
 
 1.2.3 (2018-05-14)
