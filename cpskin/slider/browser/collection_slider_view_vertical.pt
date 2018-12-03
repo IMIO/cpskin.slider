@@ -13,7 +13,7 @@
   <metal:block define-macro="content-core">
     <metal:block use-macro="context/standard_view/macros/content-core">
       <metal:entries fill-slot="entries">
-
+            <tal:defres tal:define="results python: view.getResults(content, with_sticky=False)">
         <link rel="stylesheet" type="text/css" href=""
               tal:attributes="href string:${context/@@plone_portal_state/portal_url}/++resource++jquery.flexslider/css/slider-pro.css" />
 
@@ -67,7 +67,7 @@
              tal:attributes="id string:slider-${context/id}">
 
             <div class="sp-slides">
-                <tal:entry tal:repeat="item batch">
+                <tal:entry tal:repeat="item results">
                 <tal:block tal:define="slider_scale python: getattr(context, 'slider_image_scale', 'slider');
                                        obj item/getObject;
                                        scale_func obj/@@images;
@@ -86,7 +86,7 @@
                 </tal:entry>
             </div>
             <div class="sp-thumbnails" >
-                <tal:entry tal:repeat="item batch">
+                <tal:entry tal:repeat="item results">
                 <tal:block tal:define="slider_scale python: getattr(context, 'slider_image_scale', 'slider');
                                        obj item/getObject;
                                        scale_func obj/@@images;
@@ -110,7 +110,7 @@
                 </tal:entry>
             </div>
         </div>
-
+	</tal:defres>
       </metal:entries>
     </metal:block>
   </metal:block>
