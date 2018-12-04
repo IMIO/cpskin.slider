@@ -78,8 +78,10 @@
                                        item_description item/Description;">
 
                     <div class="sp-slide" tal:condition="scaled_image">
+                      <a tal:attributes="href item_url">
                         <img tal:replace="structure python: scaled_image.tag(css_class='sp-image')" />
                         <div class="sp-caption" tal:content="python:item_description"></div>
+                      </a>
                     </div>
 
                 </tal:block>
