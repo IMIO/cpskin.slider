@@ -4,6 +4,12 @@ Changelog
 1.2.4 (unreleased)
 ------------------
 
+- Remove old archetypes.
+  [bsuttor]
+
+- Add a tag to vertical slider.
+  [bsuttor]
+
 - Restore vertical slider
   [laulaz]
 
