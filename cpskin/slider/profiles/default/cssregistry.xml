@@ -9,4 +9,10 @@
   <stylesheet
        id="++resource++jquery.flexslider/css/slider-pro.css"
        applyPrefix="True"/>
+  <stylesheet
+       id="++resource++jquery.flexslider/css/flexslider-without-image.css"
+       applyPrefix="True"/>
+  <stylesheet
+       id="++resource++jquery.flexslider/css/flexslider-count-carousel.css"
+       applyPrefix="True"/>
 </object>

@@ -1,9 +1,52 @@
 /* CPSkin fixes */
-
 .slides-count {
   display: none;
 }
-
+/*vertical slider*/
+/*ajouter avec laurent lien vers document slider*/
+.vertical-slider{
+  position: relative;
+  max-width: 923px !important;
+}
+.vertical-slider img{
+  max-width: 100%;
+}
+.sp-image{
+  margin-top: 0 !important;
+}
+.sp-thumbnail-image-container {
+    width: 100px;
+    height: 80px;
+    overflow: hidden;
+    float: left;
+}
+.sp-caption-container{
+  height: 4em;
+  overflow: hidden;
+}
+.sp-thumbnail-text {
+    width: 170px;
+    float: right;
+    padding: 8px;
+    background-color: #F0F0F0;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.sp-thumbnail-title {
+    margin-bottom: 5px;
+    text-transform: uppercase;
+    color: #333;
+}
+.sp-thumbnail-description {
+    font-size: 14px;
+    color: #333;
+}
+.vertical-slider .sp-right-thumbnails.sp-has-pointer .sp-selected-thumbnail::before {
+    border-left-color: #808e9b;
+}
+.vertical-slider .sp-right-thumbnails.sp-has-pointer .sp-selected-thumbnail::after {
+    border-right-color: #808e9b;
+}
 
 /* Plone fixes */
 .flexslider {

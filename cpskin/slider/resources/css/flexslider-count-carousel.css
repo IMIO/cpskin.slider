@@ -1,0 +1,49 @@
+#carousel-a-la-une .flex-direction-nav {
+    display: none;
+}
+#accueil #flex #carousel-a-la-une ul li {
+    background-color: transparent !important;
+    margin: 0;
+    width: 34px !important;
+}
+#carousel-a-la-une .linkimg .flexsliderimg {
+    display: none !important;
+}
+.flex-container {
+    position: relative;
+}
+#carousel-a-la-une {
+    background-color: transparent !important;
+    bottom: 0;
+    left: 0;
+    margin-bottom: 0;
+    margin-top: 0em;
+    position: relative;
+    width: 100%;
+}
+
+#carousel-a-la-une .flex-caption a {
+    visibility: hidden;
+}
+#carousel-a-la-une .flex-caption a::before {
+    color: #333;
+    content: "\0025CB";
+    font-size: 250%;
+    visibility: visible;
+}
+#carousel-a-la-une .flex-active-slide .flex-caption a::before {
+    color: #333;
+    content: "\0025C9";
+}
+
+#carousel-a-la-une .slides {
+    left: 33% !important;
+    position: relative !important;
+    transform: inherit !important;
+    transition-duration: 0s !important;
+    width: 100% !important;
+}
+
+#carousel-a-la-une .flex-viewport {
+    top: 0;
+}
