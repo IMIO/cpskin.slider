@@ -23,7 +23,9 @@
       <metal:block define-macro="content-core">
         <metal:block use-macro="context/standard_view/macros/content-core">
           <metal:entries fill-slot="entries">
-            <tal:def tal:define="results python: view.getResults(content, with_sticky=False)">
+            <tal:def tal:define="results python: view.getResults(content, with_sticky=False);
+                                 show_image python: view.show_image(content);
+                                 show_carousel python: view.show_carousel(content)">
             <div class="titre-slider"
                  tal:define="hide_title python: getattr(context, 'hide_title', False);"
                  tal:condition="not: hide_title">
@@ -56,7 +58,7 @@
 
                                       <a href="#"
                                          class="linkimg"
-                                         tal:condition="python: scaled_image and item_type != 'Media Link'"
+                                         tal:condition="python: show_image and scaled_image and item_type != 'Media Link'"
                                          tal:attributes="href item_url">
 
                                         <img tal:replace="structure python: scaled_image.tag(css_class='flexsliderimg')" />
@@ -95,6 +97,7 @@
             </div>
             <div id=""
                  class="carousel flexslider"
+                 tal:condition="show_carousel"
                  tal:attributes="id string:carousel-${context/id}">
             <ul class="slides">
                     <tal:entry tal:repeat="item results">

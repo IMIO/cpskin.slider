@@ -4,6 +4,9 @@ Changelog
 1.2.4 (unreleased)
 ------------------
 
+- Remove unneeded sliders images from html (instead of hiding them)
+  [laulaz]
+
 - Remove old archetypes.
   [bsuttor]
 
