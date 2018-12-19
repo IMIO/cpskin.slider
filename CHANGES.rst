@@ -4,6 +4,9 @@ Changelog
 1.2.4 (unreleased)
 ------------------
 
+- Add category and dates on all sliders based on collection setting : MWEBOTT-17
+  [laulaz]
+
 - Remove unneeded sliders images from html (instead of hiding them)
   [laulaz]
 

@@ -24,6 +24,7 @@
         <metal:block use-macro="context/standard_view/macros/content-core">
           <metal:entries fill-slot="entries">
             <tal:def tal:define="results python: view.getResults(content, with_sticky=False);
+                                 has_category python: view.see_categories(content);
                                  show_image python: view.show_image(content);
                                  show_carousel python: view.show_carousel(content)">
             <div class="titre-slider"
@@ -63,7 +64,46 @@
 
                                         <img tal:replace="structure python: scaled_image.tag(css_class='flexsliderimg')" />
 
+                                        <tal:block tal:condition="has_category">
+                                          <tal:loop tal:define="categories python: view.get_categories(content, obj, limit=1)"
+                                                    tal:condition="categories">
+                                            <div class="indexview-categories" tal:content="categories" />
+                                          </tal:loop>
+                                        </tal:block>
+
+                                        <span class="documentByLine"
+                                              tal:condition="python: view.see_start_end_date(item, content)"
+                                              tal:define="event python: item.getObject()">
+                                          <tal:one_day condition="python: view.is_one_day(event)">
+                                          <span i18n:translate="evenement_le">le</span>
+                                          <span tal:content="python: view.toLocalizedTime(item.start, long_format=0, event=item)" />
+                                            <tal:withHours condition="python: view.is_with_hours(event)">
+                                              <tal:openEnd condition="python: view.is_open_end(event)">
+                                                <span i18n:translate="evenement_a_lheure">à</span>
+                                                <span tal:content="python: view.toLocalizedTime(item.start, long_format=1, event=item)[11:]" />
+                                              </tal:openEnd>
+                                              <tal:fixedEnd condition="python: not view.is_open_end(event)">
+                                                <span i18n:translate="evenement_de">de</span>
+                                                <span tal:content="python: view.toLocalizedTime(item.start, long_format=1, event=item)[11:]" />
+                                                <span i18n:translate="evenement_a">à</span>
+                                                <span tal:content="python: view.toLocalizedTime(item.end, long_format=1, event=item, startend='end')[11:]" />
+                                              </tal:fixedEnd>
+                                            </tal:withHours>
+                                          </tal:one_day>
+                                          <tal:more_days condition="python: not view.is_one_day(event)">
+                                            <span i18n:translate="evenement_du">du</span>
+                                            <span tal:content="python: view.toLocalizedTime(item.start, long_format=0, event=item)" />
+                                            <span i18n:translate="evenement_au">au</span>
+                                            <span tal:content="python: view.toLocalizedTime(item.end, long_format=0, event=item, startend='end')" />
+                                          </tal:more_days>
+                                        </span>
+
                                       </a>
+
+                                      <div class="publication-date"
+                                           tal:condition="python: not view.hide_date(item, content)"
+                                           tal:content="python: view.toLocalizedTime(item.effective)"></div>
+
                                       <a href="#"
                                          class="linkimg"
                                          tal:condition="python: item_type == 'Media Link'"
@@ -123,11 +163,46 @@
                                                      scaled_image python: getattr(obj, 'image', False) and scale_func.scale('image', scale=carousel_scale)"
                                          tal:attributes="href item_url; class string:linkimg ${link_class}">
 
-                                           <img tal:replace="structure python: scaled_image.tag(css_class='flexsliderimg')" />
+                                        <img tal:replace="structure python: scaled_image.tag(css_class='flexsliderimg')" />
+
+                                        <tal:block tal:condition="has_category">
+                                          <tal:loop tal:define="categories python: view.get_categories(content, obj, limit=1)"
+                                                    tal:condition="categories">
+                                            <div class="indexview-categories" tal:content="categories" />
+                                          </tal:loop>
+                                        </tal:block>
+
+                                        <span class="documentByLine"
+                                              tal:condition="python: view.see_start_end_date(item, content)"
+                                              tal:define="event python: item.getObject()">
+                                          <tal:one_day condition="python: view.is_one_day(event)">
+                                          <span i18n:translate="evenement_le">le</span>
+                                          <span tal:content="python: view.toLocalizedTime(item.start, long_format=0, event=item)" />
+                                            <tal:withHours condition="python: view.is_with_hours(event)">
+                                              <tal:openEnd condition="python: view.is_open_end(event)">
+                                                <span i18n:translate="evenement_a_lheure">à</span>
+                                                <span tal:content="python: view.toLocalizedTime(item.start, long_format=1, event=item)[11:]" />
+                                              </tal:openEnd>
+                                              <tal:fixedEnd condition="python: not view.is_open_end(event)">
+                                                <span i18n:translate="evenement_de">de</span>
+                                                <span tal:content="python: view.toLocalizedTime(item.start, long_format=1, event=item)[11:]" />
+                                                <span i18n:translate="evenement_a">à</span>
+                                                <span tal:content="python: view.toLocalizedTime(item.end, long_format=1, event=item, startend='end')[11:]" />
+                                              </tal:fixedEnd>
+                                            </tal:withHours>
+                                          </tal:one_day>
+                                          <tal:more_days condition="python: not view.is_one_day(event)">
+                                            <span i18n:translate="evenement_du">du</span>
+                                            <span tal:content="python: view.toLocalizedTime(item.start, long_format=0, event=item)" />
+                                            <span i18n:translate="evenement_au">au</span>
+                                            <span tal:content="python: view.toLocalizedTime(item.end, long_format=0, event=item, startend='end')" />
+                                          </tal:more_days>
+                                        </span>
+
                                       </a>
 
                                       <div class="publication-date"
-                                           tal:condition="python: view.show_publication_date(content, item)"
+                                           tal:condition="python: not view.hide_date(item, content)"
                                            tal:content="python: view.toLocalizedTime(item.effective)"></div>
 
                                       <a href="#"
