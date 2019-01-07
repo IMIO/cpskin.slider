@@ -4,6 +4,9 @@ Changelog
 1.2.4 (unreleased)
 ------------------
 
+- Change position to date and category on all sliders bosed on collection setting : MWEBOTT-17
+  [mgennart]
+
 - Add category and dates on all sliders based on collection setting : MWEBOTT-17
   [laulaz]
 

@@ -67,6 +67,7 @@
 .slider-without-images .flex-viewport {
   background: #576574;
 }
+.slider-without-images .flexslider .flex-caption,
 .slider-without-images #slider-a-la-une.flexslider .flex-caption {
   background: #8395a7 !important;
   margin-top: 0px !important;
@@ -89,6 +90,7 @@
 .slider-without-images .flex-direction-nav a{
   opacity: 1;
 }
+.slider-without-images .read-next-link,
 .slider-without-images #slider-a-la-une .read-next-link{
   display: block ;
   background: #8395a7;
