@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.2.4 (unreleased)
+1.2.4 (2019-01-08)
 ------------------
 
 - Change position to date and category on slider verticals based on collection setting : MWEBOTT-17
