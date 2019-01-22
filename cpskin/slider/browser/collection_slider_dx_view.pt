@@ -230,7 +230,7 @@
                                         </tal:block>
                                         <div class="flex-caption-inner">
                                             <h2>
-                                                <a tal:attributes="href item_url"
+                                                <a tal:attributes="href item_url; class link_class"
                                                    tal:content="item/Title">Content title</a>
                                            </h2>
                                         </div>
@@ -238,7 +238,7 @@
 
                                       <div class="read-next-link">
                                            <a href=""
-                                              tal:attributes="href item_url"
+                                              tal:attributes="href item_url; class link_class"
                                               i18n:translate="">Lire la suite</a>
                                       </div>
                                   </li>

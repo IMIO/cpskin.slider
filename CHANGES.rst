@@ -4,7 +4,8 @@ Changelog
 1.2.5 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix click on slider links (restore removed class) : WEB-2898
+  [laulaz]
 
 
 1.2.4 (2019-01-08)
