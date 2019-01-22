@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.2.5 (unreleased)
+1.2.5 (2019-01-22)
 ------------------
 
 - Fix click on slider links (restore removed class) : WEB-2898
