@@ -1,11 +1,11 @@
 Changelog
 =========
 
-1.2.6 (unreleased)
+1.2.6 (2019-01-29)
 ------------------
 
-- Nothing changed yet.
-
+- Changes value and css for slider vertical.
+  [mgennart]
 
 1.2.5 (2019-01-22)
 ------------------

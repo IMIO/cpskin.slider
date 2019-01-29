@@ -26,8 +26,9 @@
         <script type="text/javascript">
             $(document).ready(function( $ ) {
                 $( '.vertical-slider' ).sliderPro({
-                    width: 670,
-                    height: 500,
+                    width: '100%',
+                    autoHeight: true,
+                    autoSlideSize: true,
                     orientation: 'vertical',
                     loop: false,
                     arrows: true,
@@ -35,7 +36,10 @@
                     thumbnailsPosition: 'right',
                     responsive:true,
                     thumbnailPointer: true,
-                    thumbnailWidth: 290,
+                    thumbnailWidth: 400,
+                    thumbnailHeight: 100,
+                    autoplayOnHover: 'stop',
+                    imageScaleMode: 'none',
                     breakpoints: {
                         800: {
                             thumbnailsPosition: 'bottom',
@@ -150,10 +154,10 @@
             </div>
             <div class="sp-thumbnails" >
                 <tal:entry tal:repeat="item results">
-                <tal:block tal:define="slider_scale python: getattr(context, 'slider_image_scale', 'slider');
+                <tal:block tal:define="carousel_scale python: getattr(context, 'carousel_image_scale', 'carousel');
                                        obj item/getObject;
                                        scale_func obj/@@images;
-                                       scaled_image python: getattr(obj, 'image', False) and scale_func.scale('image', scale=slider_scale);
+                                       scaled_image python: getattr(obj, 'image', False) and scale_func.scale('image', scale=carousel_scale);
                                        item_url item/getURL;
                                        item_id item/getId;
                                        item_description item/Description;
