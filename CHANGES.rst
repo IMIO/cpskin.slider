@@ -4,7 +4,8 @@ Changelog
 1.2.7 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Fix bug on slider pro.
+  [signreaq]
 
 
 1.2.6 (2019-01-29)
