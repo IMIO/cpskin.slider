@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.2.7 (unreleased)
+1.2.7 (2019-08-05)
 ------------------
 
 - Fix bug on slider pro.
