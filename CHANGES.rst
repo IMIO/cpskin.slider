@@ -4,6 +4,9 @@ Changelog
 1.2.8 (unreleased)
 ------------------
 
+- WEB-3302: Implement slick slider
+  [mpeeters]
+
 - Remove useless declaration of javascript resources that are not used anyway
   [mpeeters]
 
