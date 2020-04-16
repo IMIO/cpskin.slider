@@ -15,4 +15,7 @@
   <stylesheet
        id="++resource++jquery.flexslider/css/flexslider-count-carousel.css"
        applyPrefix="True"/>
+  <stylesheet
+       id="++resource++jquery.flexslider/css/slick.css"
+       applyPrefix="True"/>
 </object>
