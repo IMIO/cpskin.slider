@@ -4,7 +4,8 @@ Changelog
 1.2.8 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- Remove useless declaration of javascript resources that are not used anyway
+  [mpeeters]
 
 
 1.2.7 (2019-08-05)
