@@ -59,9 +59,6 @@
 
         </a>
 
-        <div class="publication-date"
-             tal:condition="python: not view.hide_date(item, content)"
-             tal:content="python: view.toLocalizedTime(item.effective)"></div>
 
         <a href="#"
            class="linkimg"
@@ -112,6 +109,10 @@
             </div>
           </tal:block>
           <div class="flex-caption-inner">
+              <div class="publication-date"
+                tal:condition="python: not view.hide_date(item, content)"
+                tal:content="python: view.toLocalizedTime(item.effective)">
+                </div>
               <h2>
                   <a tal:attributes="href item_url"
                      tal:content="item/Title">Content title</a>
