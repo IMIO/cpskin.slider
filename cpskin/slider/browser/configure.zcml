@@ -25,6 +25,15 @@
     layer="..interfaces.ICPSkinSliderLayer"
     />
 
+  <browser:page
+    for="plone.app.contenttypes.interfaces.ICollection"
+    name="slick_view"
+    template="collection_slick_view.pt"
+    class="plone.app.contenttypes.browser.collection.CollectionView"
+    permission="zope2.View"
+    layer="..interfaces.ICPSkinSliderLayer"
+    />
+
   <browser:menuItem
     for="plone.app.contenttypes.interfaces.ICollection"
     menu="plone_displayviews"
