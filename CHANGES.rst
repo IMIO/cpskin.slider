@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.2.9 (unreleased)
+1.2.9 (2020-04-28)
 ------------------
 
 - WEB-3302: Fix bad url in slick css
