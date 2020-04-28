@@ -199,11 +199,11 @@
 }
 .slick-prev:before
 {
-    content: url('./fonts/prev.svg');
+    content: url('fonts/prev.svg');
 }
 [dir='rtl'] .slick-prev:before
 {
-        content: url('./fonts/next.svg');
+        content: url('fonts/next.svg');
 }
 
 .slick-next
@@ -217,11 +217,11 @@
 }
 .slick-next:before
 {
-        content: url('./fonts/next.svg');
+        content: url('fonts/next.svg');
 }
 [dir='rtl'] .slick-next:before
 {
-    content: url('./fonts/prev.svg');
+    content: url('fonts/prev.svg');
 }
 
 /* Dots */

@@ -4,7 +4,8 @@ Changelog
 1.2.9 (unreleased)
 ------------------
 
-- Nothing changed yet.
+- WEB-3302: Fix bad url in slick css
+  [thomlamb]
 
 
 1.2.8 (2020-04-28)
