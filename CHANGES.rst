@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.2.8 (unreleased)
+1.2.8 (2020-04-28)
 ------------------
 
 - WEB-3302: Implement slick slider
