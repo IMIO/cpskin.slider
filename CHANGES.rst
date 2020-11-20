@@ -4,7 +4,7 @@ Changelog
 1.2.10 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- [WEB-3478] slick_slider : Print short date format if show_day_and_month is true.
 
 
 1.2.9 (2020-04-28)

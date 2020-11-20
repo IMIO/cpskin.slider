@@ -99,10 +99,18 @@
                   </tal:withHours>
                 </tal:one_day>
                 <tal:more_days condition="python: not view.is_one_day(event)">
-                  <span i18n:translate="evenement_du">du</span>
-                  <span tal:content="python: view.toLocalizedTime(item.start, long_format=0, event=item)" />
-                  <span i18n:translate="evenement_au">au</span>
-                  <span tal:content="python: view.toLocalizedTime(item.end, long_format=0, event=item, startend='end')" />
+                  <tal:if condition="python: content.show_day_and_month">
+                    <div class="day-month">
+                      <div tal:content="python: (view.get_event_dates(item)).get('start')"></div>
+                      <div tal:content="python: (view.get_event_dates(item)).get('end')"></div>
+                    </div>
+                  </tal:if>
+                  <tal:else condition="python: not content.show_day_and_month">
+                    <span i18n:translate="evenement_du">du</span>
+                    <span tal:content="python: view.toLocalizedTime(item.start, long_format=0, event=item)" />
+                    <span i18n:translate="evenement_au">au</span>
+                    <span tal:content="python: view.toLocalizedTime(item.end, long_format=0, event=item, startend='end')" />
+                  </tal:else>
                 </tal:more_days>
                </span>
               </a>
