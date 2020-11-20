@@ -5,6 +5,7 @@ Changelog
 -------------------
 
 - [WEB-3478] slick_slider : Print short date format if show_day_and_month is true.
+  [boulch]
 
 
 1.2.9 (2020-04-28)
