@@ -4,7 +4,8 @@ Changelog
 1.2.11 (unreleased)
 -------------------
 
-- Nothing changed yet.
+- slick_slider : Print short date : Print short date format when only one day is select but from an hour to another.
+  [boulch]
 
 
 1.2.10 (2020-11-20)
