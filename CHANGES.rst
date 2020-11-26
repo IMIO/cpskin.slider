@@ -1,7 +1,7 @@
 Changelog
 =========
 
-1.2.11 (unreleased)
+1.2.11 (2020-11-26)
 -------------------
 
 - slick_slider : Print short date : Print short date format when only one day is select but from an hour to another.
